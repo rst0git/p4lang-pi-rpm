@@ -22,12 +22,13 @@ Source4: https://github.com/p4lang/p4runtime/archive/refs/tags/v%{submodule_p4ru
 Source5: https://github.com/troydhanson/uthash/archive/%{submodule_uthash_version}.tar.gz
 
 BuildRequires: valgrind
+BuildRequires: automake
 BuildRequires: libtool
+BuildRequires: python3-devel
 BuildRequires: glibc-devel g++
 BuildRequires: boost-devel boost-system boost-thread
 BuildRequires: grpc-devel grpc-plugins
 BuildRequires: protobuf-devel
-BuildRequires: python3
 
 %description
 Protocol Independent API (PI or P4 Runtime) defines a set of APIs that allow
