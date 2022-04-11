@@ -27,6 +27,7 @@ BuildRequires: glibc-devel g++
 BuildRequires: boost-devel boost-system boost-thread
 BuildRequires: grpc-devel grpc-plugins
 BuildRequires: protobuf-devel
+BuildRequires: python3
 
 %description
 Protocol Independent API (PI or P4 Runtime) defines a set of APIs that allow
