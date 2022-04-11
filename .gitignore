@@ -4,3 +4,6 @@
 /bf15263081be6229be31addd48566df93921cb46.tar.gz
 /release-1.8.0.tar.gz
 /v1.3.0.tar.gz
+p4lang-pi-*/
+*.log
+*.rpm
