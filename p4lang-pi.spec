@@ -23,6 +23,7 @@ Source5: https://github.com/troydhanson/uthash/archive/%{submodule_uthash_versio
 
 BuildRequires: valgrind
 BuildRequires: libtool
+BuildRequires: glibc-devel g++
 BuildRequires: boost-devel boost-system boost-thread
 BuildRequires: grpc-devel grpc-plugins
 BuildRequires: protobuf-devel
