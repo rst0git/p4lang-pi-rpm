@@ -88,6 +88,7 @@ cd build
 make install prefix=%{buildroot}%{_prefix} libdir=%{buildroot}/%{_libdir}
 
 %files
+%license %{_datadir}/p4lang-pi/LICENSE
 %{_bindir}/pi_convert_p4info
 %{_bindir}/pi_gen_fe_defines
 %{_bindir}/pi_gen_native_json
@@ -99,7 +100,6 @@ make install prefix=%{buildroot}%{_prefix} libdir=%{buildroot}/%{_libdir}
 %{python3_sitelib}/google/*
 %{python3_sitelib}/p4/*
 %{_libdir}/libpi*
-%{_datadir}/p4lang-pi/LICENSE
 
 %changelog
 * Sun Mar 27 2022 <rstoyanov@fedoraproject.org> - 0.1.0
