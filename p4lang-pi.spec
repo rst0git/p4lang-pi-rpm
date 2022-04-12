@@ -25,7 +25,7 @@ BuildRequires: valgrind
 BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: python3-devel
-BuildRequires: glibc-devel g++
+BuildRequires: glibc-devel gcc gcc-c++
 BuildRequires: boost-devel boost-system boost-thread
 BuildRequires: grpc-devel grpc-plugins
 BuildRequires: protobuf-devel
