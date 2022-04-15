@@ -35,6 +35,20 @@ Protocol Independent API (PI or P4 Runtime) defines a set of APIs that allow
 interacting with entities defined in a P4 program, such as tables, counters,
 meters.
 
+%package devel
+Summary: Header files and libraries for %{name}
+Requires: %{name} = %{version}-%{release}
+
+%description devel
+This package contains header files and libraries for %{name}.
+
+%package libs
+Summary: Libraries for %{name}
+Requires: %{name} = %{version}-%{release}
+
+%description libs
+This package contains the libraries for %{name}
+
 %prep
 %setup -q -c -n p4lang-pi-%{version}
 
@@ -87,19 +101,27 @@ cd PI-%{version}
 cd build
 make install prefix=%{buildroot}%{_prefix} libdir=%{buildroot}/%{_libdir}
 
+# remove static libs
+rm -f %{buildroot}/%{_libdir}/*.a %{buildroot}/%{_libdir}/*.la
+
 %files
 %license %{_datadir}/p4lang-pi/LICENSE
 %{_bindir}/pi_convert_p4info
 %{_bindir}/pi_gen_fe_defines
 %{_bindir}/pi_gen_native_json
+%{python3_sitelib}/gnmi/*
+%{python3_sitelib}/google/*
+%{python3_sitelib}/p4/*
+
+%files devel
 %{_includedir}/gnmi/*
 %{_includedir}/google/rpc/*
 %{_includedir}/p4/*
 %{_includedir}/PI/*
-%{python3_sitelib}/gnmi/*
-%{python3_sitelib}/google/*
-%{python3_sitelib}/p4/*
-%{_libdir}/libpi*
+%{_libdir}/libpi*.so
+
+%files libs
+%{_libdir}/libpi*.so.*
 
 %changelog
 * Sun Mar 27 2022 <rstoyanov@fedoraproject.org> - 0.1.0
