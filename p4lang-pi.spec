@@ -95,9 +95,6 @@ make %{?_smp_mflags}
 
 %install
 cd PI-%{version}
-# license
-%{__mkdir_p} %{buildroot}%{_datadir}/p4lang-pi
-%{__cp} LICENSE %{buildroot}%{_datadir}/p4lang-pi/LICENSE
 cd build
 make install prefix=%{buildroot}%{_prefix} libdir=%{buildroot}/%{_libdir}
 
@@ -105,7 +102,7 @@ make install prefix=%{buildroot}%{_prefix} libdir=%{buildroot}/%{_libdir}
 rm -f %{buildroot}/%{_libdir}/*.a %{buildroot}/%{_libdir}/*.la
 
 %files
-%license %{_datadir}/p4lang-pi/LICENSE
+%license PI-%{version}/LICENSE
 %{_bindir}/pi_convert_p4info
 %{_bindir}/pi_gen_fe_defines
 %{_bindir}/pi_gen_native_json
